@@ -1,11 +1,16 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function FeaturedPost() {
   return (
     <article>
       <div className="flex -mx-4 items-center">
-        <div className="px-4 w-8/12">
-          <img src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl w-full' />
+        <div className="px-4 w-8/12 h-96 relative">
+          <Image
+            src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
         <div className="w-4/12 px-4">
           <div className="flex items-center text-white/60 space-x-4">
@@ -20,7 +25,7 @@ export default function FeaturedPost() {
             Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.
           </p>
           <div className="flex items-center mt-6">
-            <img src="/author-1.png" alt="author photo" className='w-14 h-14 rounded-full object-cover' />
+            <Image src="/author-1.png" alt="author photo" className='rounded-full object-cover' width={56} height={56} />
             <div className="ml-4">
               <h3>Leslie Alexander</h3>
               <div className="text-white/60 text-sm">
