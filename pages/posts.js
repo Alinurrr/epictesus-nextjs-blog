@@ -3,6 +3,7 @@ import CardPost from './component/CardPost'
 import Container from './component/Container'
 import Layout from './component/Layout'
 import mockPost from '../utils/posts.json';
+import SectionHeader from './component/SectionHeader';
 
 
 export default function posts() {
@@ -10,6 +11,9 @@ export default function posts() {
   return (
     <>
       <Layout>
+        <SectionHeader>
+          UI Design
+        </SectionHeader>
         <Container>
           <div className="flex flex-wrap -mx-8 mt-4">
             {posts.map((post, index) => (
