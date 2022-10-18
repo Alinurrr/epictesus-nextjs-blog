@@ -7,7 +7,7 @@ import SectionHeader from './component/SectionHeader';
 
 
 export default function posts() {
-  const [posts, setPosts] = useState([mockPost]);
+  const [posts, setPosts] = useState(mockPost);
   return (
     <>
       <Layout>
