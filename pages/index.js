@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CardPost from './component/CardPost'
+import Container from './component/Container';
 import FeaturedPost from './component/FeaturedPost'
 import Footer from './component/Footer';
 import Navbar from './component/Navbar'
@@ -71,7 +72,7 @@ export default function Home() {
   return (
     <div className='bg-gradient-to-b from-gray-600 to-gray-900 min-h-screen text-white'>
       <Navbar />
-      <div className="container mx-auto">
+      <Container>
         <FeaturedPost />
         <div className="flex flex-wrap -mx-4 mt-4">
           {posts.map((post, index) => (
@@ -80,7 +81,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
       <Footer />
     </div>
   )
