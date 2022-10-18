@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import CardPost from './component/CardPost'
+import React, { useState } from 'react';
+import CardPost from './component/CardPost';
 import Container from './component/Container';
-import FeaturedPost from './component/FeaturedPost'
-import Footer from './component/Footer';
-import Navbar from './component/Navbar'
+import FeaturedPost from './component/FeaturedPost';
+import Layout from './component/Layout';
 
 export default function Home() {
   const [posts, setPosts] = useState([
@@ -70,11 +69,10 @@ export default function Home() {
   ]);
 
   return (
-    <div className='bg-gradient-to-b from-gray-600 to-gray-900 min-h-screen text-white overflow-hidden'>
-      <Navbar />
+    <Layout>
       <Container>
         <FeaturedPost />
-        <div className="flex flex-wrap -mx-4 mt-4">
+        <div className="flex flex-wrap -mx-8 mt-4">
           {posts.map((post, index) => (
             <div key={index} className="md:w-4/12 w-full px-4 py-6">
               <CardPost {...post} />
@@ -82,7 +80,6 @@ export default function Home() {
           ))}
         </div>
       </Container>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
