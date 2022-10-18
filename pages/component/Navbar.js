@@ -13,7 +13,7 @@ export default function Navbar() {
               </div>
               Epictesus
             </div>
-            <div className="w-8/12">
+            <div className="w-7/12">
               <ul className="space-x-14 flex items-center">
                 <li><a href="#" className="hover:underline">UI Design</a></li>
                 <li><a href="#" className="hover:underline">Front-End</a></li>
@@ -36,7 +36,7 @@ export default function Navbar() {
                 </li>
               </ul>
             </div>
-            <div className="w-2/12">
+            <div className="w-3/12">
               <input type="search" className='bg-gray-700 py-3 px-6 w-full rounded-full bg-search pl-12' placeholder='Search ...' />
             </div>
           </div>
