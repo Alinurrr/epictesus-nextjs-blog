@@ -5,15 +5,15 @@ import InfoPost from './InfoPost'
 export default function FeaturedPost() {
   return (
     <article>
-      <div className="flex -mx-4 items-center">
-        <div className="px-4 w-8/12 h-96 relative">
+      <div className="flex flex-wrap -mx-4 items-center">
+        <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative">
           <Image
             src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
             layout="fill"
             objectFit="cover"
           />
         </div>
-        <div className="w-4/12 px-4">
+        <div className="lg:w-4/12 md:w-5/12 w-full px-4">
           <InfoPost
             category="UI DESIGN"
             date="Okt 18, 2020"
