@@ -7,7 +7,7 @@ import SectionHeader from './component/SectionHeader';
 import Head from 'next/head';
 
 
-export default function posts() {
+export default function Posts() {
   const [posts, setPosts] = useState(mockPost);
   return (
     <>
@@ -21,7 +21,7 @@ export default function posts() {
             !posts.length ? (
               <div className="text-center py-20">
                 <h2 className='text-6xl'>No result 😥</h2>
-                <p className='text-xl mt-4 text-white/60 md:w-6/12 w-full mx-auto'>We couldn't find any posts with the keyword `yahahahahahyuk`. Please try another keyword.</p>
+                <p className='text-xl mt-4 text-white/60 md:w-6/12 w-full mx-auto'>{`We couldn't find any posts with the keyword 'yahahahahahyuk'. Please try another keyword.`}</p>
               </div>
             ) : (
               <div className="flex flex-wrap -mx-8 mt-4">
