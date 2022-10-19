@@ -4,6 +4,7 @@ import Container from './component/Container'
 import Layout from './component/Layout'
 import mockPost from '../utils/posts.json';
 import SectionHeader from './component/SectionHeader';
+import Head from 'next/head';
 
 
 export default function posts() {
@@ -11,6 +12,9 @@ export default function posts() {
   return (
     <>
       <Layout>
+        <Head>
+          <title>Posts &mdash; Epictesus</title>
+        </Head>
         <Container>
           <SectionHeader>UI Design</SectionHeader>
           {

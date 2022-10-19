@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import Container from './component/Container';
@@ -8,6 +9,9 @@ import PostMetaTitle from './component/PostMetaTitle';
 export default function detail() {
   return (
     <Layout>
+      <Head>
+        <title>Detail &mdash; Epictesus</title>
+      </Head>
       <Container>
         <div className="md:w-6/12 w-full mx-auto flex flex-col items-center">
           <PostMetaTitle
