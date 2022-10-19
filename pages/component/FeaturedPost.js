@@ -6,7 +6,7 @@ export default function FeaturedPost() {
   return (
     <article>
       <div className="flex flex-wrap -mx-4 items-center">
-        <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative">
+        <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative mb-4 md:mb-0">
           <Image
             src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
             layout="fill"
@@ -26,6 +26,7 @@ export default function FeaturedPost() {
           />
         </div>
       </div>
+      <hr className='border-white/10 mt-10' />
     </article >
   )
 }
