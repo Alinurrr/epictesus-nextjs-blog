@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useState } from 'react'
 import Container from './Container'
 
@@ -21,11 +22,15 @@ export default function Navbar() {
                 </svg>
               </button>
             </div>
-            <div className="lg:w-2/12 w-6/12 flex items-center lg:justify-start justify-center ">
-              <div className="w-10 h-10 bg-gray-500 rounded flex items-center justify-center mr-4 shadow-2xl">
-                E
-              </div>
-              Epictesus
+            <div className="lg:w-2/12 w-6/12">
+              <Link href="/">
+                <a className='flex items-center lg:justify-start justify-center'>
+                  <div className="w-10 h-10 bg-gray-500 rounded flex items-center justify-center mr-4 shadow-2xl">
+                    E
+                  </div>
+                  Epictesus
+                </a>
+              </Link>
             </div>
             <div className="w-2/12 lg:hidden text-right">
               <button onClick={() => setSearch(!search)}>
@@ -42,9 +47,9 @@ export default function Navbar() {
                 <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-x"><line x1={18} y1={6} x2={6} y2={18} /><line x1={6} y1={6} x2={18} y2={18} /></svg>
               </button>
               <ul className="lg:space-x-14 flex lg:items-center lg:flex-row flex-col lg:space-y-0 space-y-4">
-                <li><a href="#" className="hover:underline">UI Design</a></li>
-                <li><a href="#" className="hover:underline">Front-End</a></li>
-                <li><a href="#" className="hover:underline">Back-End</a></li>
+                <li><Link href="/posts"><a className="hover:underline">UI Design</a></Link></li>
+                <li><Link href="/posts"><a className="hover:underline">Front-End</a></Link></li>
+                <li><Link href="/posts"><a className="hover:underline">Back-End</a></Link></li>
                 <li className='relative'>
                   <a href="#" className="hover:underline cursor-pointer flex items-center"
                     onClick={() => setDropdown(!dropdown)}>
@@ -55,9 +60,9 @@ export default function Navbar() {
                   </a>
                   {dropdown && (
                     <ul className='absolute z-50 w-[200px] bg-gray-800 rounded shadow-2xl mt-4'>
-                      <li><a href="#" className="flex py-3 px-6 hover:bg-gray-700/60 border-b border-white/5">Internet</a></li>
-                      <li><a href="#" className="flex py-3 px-6 hover:bg-gray-700/60 border-b border-white/5">Books</a></li>
-                      <li><a href="#" className="flex py-3 px-6 hover:bg-gray-700/60">Open Source</a></li>
+                      <li><Link href="/posts"><a className="flex py-3 px-6 hover:bg-gray-700/60 border-b border-white/5">Internet</a></Link></li>
+                      <li><Link href="/posts"><a className="flex py-3 px-6 hover:bg-gray-700/60 border-b border-white/5">Books</a></Link></li>
+                      <li><Link href="/posts"><a className="flex py-3 px-6 hover:bg-gray-700/60">Open Source</a></Link></li>
                     </ul>
                   )}
                 </li>

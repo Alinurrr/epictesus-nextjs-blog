@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import InfoPost from './InfoPost'
 
@@ -7,11 +8,16 @@ export default function FeaturedPost() {
     <article>
       <div className="flex flex-wrap -mx-4 items-center">
         <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative mb-4 md:mb-0">
-          <Image
-            src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
-            layout="fill"
-            objectFit="cover"
-          />
+          <Link href="/detail">
+            <a>
+              <Image
+                src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
+                layout="fill"
+                objectFit="cover"
+              />
+            </a>
+          </Link>
+
         </div>
         <div className="lg:w-4/12 md:w-5/12 w-full px-4">
           <InfoPost
