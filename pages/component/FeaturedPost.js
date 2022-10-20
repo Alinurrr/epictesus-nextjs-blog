@@ -1,24 +1,38 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import InfoPost from './InfoPost'
 
 export default function FeaturedPost() {
+  const [thumbnail, setThumbnail] = useState(null)
+
+  useEffect(() => {
+    setThumbnail('/public/featured-thumbnail.png')
+    // console.log(thumbnail)
+  }, [])
+
   return (
     <article>
       <div className="flex flex-wrap -mx-4 items-center">
-        <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative mb-4 md:mb-0">
-          <Link href="/detail">
-            <a>
-              <Image
-                src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
-                layout="fill"
-                objectFit="cover"
-              />
-            </a>
-          </Link>
 
-        </div>
+        {
+          thumbnail ?
+            <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative mb-4 md:mb-0 transition-all">
+              <Link href="/detail">
+                <a>
+                  <Image
+                    src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
+                    layout="fill"
+                    objectFit="cover"
+                    loading="lazy"
+                  />
+                </a>
+              </Link>
+            </div>
+            :
+            <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative mb-4 md:mb-0 animate-pulse bg-slate-200 rounded-xl" />
+        }
+
         <div className="lg:w-4/12 md:w-5/12 w-full px-4">
           <InfoPost
             category="UI DESIGN"
@@ -28,7 +42,6 @@ export default function FeaturedPost() {
             authorAvatar="/author-1.png"
             authorName="Leslie Alexander"
             authorJob="UI Designer"
-
           />
         </div>
       </div>
