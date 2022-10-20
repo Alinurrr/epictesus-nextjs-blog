@@ -6,29 +6,23 @@ import InfoPost from './InfoPost'
 export default function FeaturedPost() {
   const [thumbnailLoading, setThumbnailLoading] = useState(true)
 
-  // useEffect(() => {
-  //   setThumbnail('/public/featured-thumbnail.png')
-  //   // console.log(thumbnail)
-  // }, [])
-
   return (
     <article>
       <div className="flex flex-wrap -mx-4 items-center">
-
-        {
-          thumbnailLoading &&
-          <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative mb-4 md:mb-0 animate-pulse bg-slate-200 rounded-xl" />
-        }
         <div className="px-4 lg:w-8/12 md:w-7/12 w-full sm:h-96 h-60 relative mb-4 md:mb-0 transition-all">
           <Link href="/detail">
             <a>
+              {
+                thumbnailLoading &&
+                <div className="w-full h-full animate-pulse bg-slate-200 rounded-xl" />
+              }
               <Image
                 src="/featured-thumbnail.png" alt="featured thumbnail" className='rounded-xl '
                 layout="fill"
                 objectFit="cover"
-                loading="lazy"
                 onLoadingComplete={() => setThumbnailLoading(false)}
               />
+
             </a>
           </Link>
         </div>
